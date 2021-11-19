@@ -14,11 +14,10 @@ import {
 
 const Home = () => {
   const [code, setCode] = useState("+62");
+  const c = code.substring(1);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isClick, setIsClick] = useState(false);
   const [dangerLight, setDangerLight] = useState(false);
-
-  const c = code.substring(1);
 
   const getCountryCode = (code) => {
     setCode(code);
@@ -33,8 +32,8 @@ const Home = () => {
       setDangerLight(true);
     } else {
       setIsClick(true);
-      window.location.href = `https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`;
-      setIsClick(false);
+      window.open(`https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`);
+      window.location.reload(true);
     }
   };
 
