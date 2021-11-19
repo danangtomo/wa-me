@@ -33,7 +33,7 @@ const Home = () => {
       setDangerLight(true);
     } else {
       setIsClick(true);
-      window.location.href = `https://wa.me/send/?phone=${c}${phoneNumber}&text&app_absent=0`;
+      window.location.href = `https://wa.me/send/?phone=${c}${phoneNumber}`;
     }
   };
 
