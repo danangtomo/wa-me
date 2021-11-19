@@ -35,6 +35,11 @@ const Home = () => {
       document.location.replace(
         `https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`
       );
+      caches.keys().then((names) => {
+        names.forEach((name) => {
+          caches.delete(name);
+        });
+      });
     }
   };
 
