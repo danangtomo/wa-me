@@ -32,14 +32,8 @@ const Home = () => {
       setDangerLight(true);
     } else {
       setIsClick(true);
-      document.location.replace(
-        `https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`
-      );
-      caches.keys().then((names) => {
-        names.forEach((name) => {
-          caches.delete(name);
-        });
-      });
+      window.open(`https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`);
+      window.location.reload(true);
     }
   };
 
