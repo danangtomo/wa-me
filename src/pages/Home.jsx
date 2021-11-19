@@ -32,8 +32,9 @@ const Home = () => {
       setDangerLight(true);
     } else {
       setIsClick(true);
-      window.open(`https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`);
-      window.location.reload(true);
+      document.location.replace(
+        `https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`
+      );
     }
   };
 
