@@ -33,7 +33,7 @@ const Home = () => {
       setDangerLight(true);
     } else {
       setIsClick(true);
-      window.location.href = `https://wa.me/send/?phone=${c}${phoneNumber}`;
+      window.location.href = `https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`;
     }
   };
 
