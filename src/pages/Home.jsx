@@ -34,6 +34,7 @@ const Home = () => {
     } else {
       setIsClick(true);
       window.location.href = `https://api.whatsapp.com/send/?phone=${c}${phoneNumber}`;
+      setIsClick(false);
     }
   };
 
