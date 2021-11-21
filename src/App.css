@@ -1,3 +1,19 @@
 body {
-  background-color: #d1dfe9;
+  background-color: #eaeff3;
 }
+
+/*.select-dark {
+  color: #d8dfec !important;
+  background-color: #333131 !important;
+}*/
+
+/*.ant-select-selector {
+  background-color: #333131 !important;
+  color: #d8dfec !important;
+  border-radius: 5px !important;
+}
+
+.ant-select-arrow,
+.ant-select-search {
+  color: #d8dfec;
+}*/

@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import CountryCode from "../util/CountryCode";
-import Select from "react-select";
+//import Select from "react-select";
+import { Select } from "antd";
+import "antd/dist/antd.css";
 
-const DropdownMenu = ({ countryCode }) => {
-  const [selectedCode, setSelectedCode] = useState();
+const DropdownMenu = ({ countryCode, customStyles }) => {
+  const [selectedCode, setSelectedCode] = useState("+62");
+  const { Option } = Select;
 
-  const searchList = CountryCode.map(({ name, value }) => {
+  const searchList = CountryCode?.map(({ name, value }) => {
     return {
       value: value,
       label: `(${value}) ${name}`,
@@ -15,17 +18,29 @@ const DropdownMenu = ({ countryCode }) => {
 
   const handleChange = (selectedCode) => {
     setSelectedCode(selectedCode);
-    countryCode(selectedCode?.value);
+    countryCode(selectedCode);
   };
 
   return (
     <Select
-      options={searchList}
-      defaultValue={searchList[99]}
+      dropdownClassName={customStyles ? "select-dark" : null}
+      showSearch
+      optionFilterProp="children"
+      defaultValue={"+62"}
+      value={selectedCode}
       onChange={handleChange}
-      placeholder={false}
-      search
-    />
+      style={{ width: "100%" }}
+    >
+      {CountryCode.map((country, index) => (
+        <Option
+          className={customStyles ? "select-dark" : null}
+          key={index}
+          value={country?.value}
+        >
+          {country?.value} {country?.name}
+        </Option>
+      ))}
+    </Select>
   );
 };
 

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Input } from "atomize";
 
-const InputField = ({ valNum }) => {
+const InputField = ({ valNum, bg, textColor }) => {
   const [val, setVal] = useState();
 
   const handleChange = (e) => {
@@ -15,6 +15,8 @@ const InputField = ({ valNum }) => {
 
   return (
     <Input
+      bg={bg}
+      textColor={textColor}
       m={{ t: "0.5rem" }}
       placeholder="Phone Number"
       value={val}
