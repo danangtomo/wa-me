@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import CountryCode from "../util/CountryCode";
-//import Select from "react-select";
 import { Select } from "antd";
 import "antd/dist/antd.css";
 
@@ -23,7 +22,7 @@ const DropdownMenu = ({ countryCode, customStyles }) => {
 
   return (
     <Select
-      dropdownClassName={customStyles ? "select-dark" : null}
+      //dropdownClassName={customStyles ? "select-dark" : null}
       showSearch
       optionFilterProp="children"
       defaultValue={"+62"}
@@ -33,7 +32,7 @@ const DropdownMenu = ({ countryCode, customStyles }) => {
     >
       {CountryCode.map((country, index) => (
         <Option
-          className={customStyles ? "select-dark" : null}
+          //className={customStyles ? "select-dark" : null}
           key={index}
           value={country?.value}
         >

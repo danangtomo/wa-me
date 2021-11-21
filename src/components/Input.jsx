@@ -15,6 +15,7 @@ const InputField = ({ valNum, bg, textColor }) => {
 
   return (
     <Input
+      fontFamily="code"
       bg={bg}
       textColor={textColor}
       m={{ t: "0.5rem" }}

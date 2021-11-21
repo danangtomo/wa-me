@@ -63,6 +63,7 @@ const Home = () => {
         <Div
           pos="relative"
           w="100vw"
+          maxH={{ xs: "100vh", md: "100vh" }}
           h="100vh"
           bg={mode === "darkMode" && "darkBody"}
         >
@@ -104,14 +105,14 @@ const Home = () => {
             <Row p={{ y: "1rem" }}>
               <Col size="12">
                 <Text
-                  textColor={mode === "darkMode" && "darkColor"}
-                  textWeight="400"
+                  textColor={mode === "darkMode" && "darkBlueColor"}
+                  textWeight="700"
                   textAlign="center"
                   textSize="title"
-                  fontFamily="primary"
+                  fontFamily="code"
                   m={{ b: "30px" }}
                 >
-                  Send WhatsApp chats without saving the number ?
+                  Send WhatsApp without saving the number ?
                 </Text>
                 <DropdownMenu
                   countryCode={getCountryCode}
@@ -125,18 +126,19 @@ const Home = () => {
                 <Button
                   m={{ t: "1rem" }}
                   w="100%"
+                  fontFamily="code"
                   onClick={sendText}
                   disabled={phoneNumber?.length > 3 ? false : true}
-                  bg="info500"
+                  bg={mode === "darkMode" ? "darkBlueColor" : "black900"}
                   prefix={
                     <Icon
                       name={isClick ? "Loading" : "MessageSolid"}
                       pos="absolute"
                       top="50%"
                       left="1rem"
+                      color="white"
                       transform="translateY(-50%)"
                       size="18px"
-                      color="white"
                       m={{ r: "0.5rem" }}
                     />
                   }
